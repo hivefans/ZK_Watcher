@@ -23,11 +23,19 @@ class NotifyRingChanges
   end
 
   def dofunc(data,event)
-      puts event+" "+data.inspect
+      if data==nil
+      	puts event
+      else
+      	puts event+" "+data.inspect
+      end
   end
 
   def run
     @sub = @zk.register(@path) do |event|
+      if event.node_deleted?
+      	dofunc(nil,event.event_name)
+        queue.push(:deleted)
+      end
       if event.node_changed? or event.node_created?
         data = @zk.get(@path, watch: true).first    # fetch latest data and re-set watch
         dofunc(data,event.event_name)
