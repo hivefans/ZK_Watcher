@@ -3,7 +3,7 @@ ZK_Watcher
 
 Continuous zookeeper watcher for a specific znode implemented in Ruby
 
-#Dependencies
+###Dependencies
 It will automaticaly install the needed gems: [ZK][] and [slyphon-zookeeper][]
 
 ###Usage
