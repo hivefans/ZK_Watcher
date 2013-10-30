@@ -3,5 +3,5 @@ ZK_Watcher
 
 Continuous zookeper watcher for a specific znode implemented in Ruby
 
-##Dependencies
+#Dependencies
 It will ask confirmation about installing the gems: zk and slyphon-zookeeper
