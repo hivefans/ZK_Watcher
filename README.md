@@ -7,6 +7,7 @@ Continuous zookeeper watcher for a specific znode implemented in Ruby
 It will automaticaly install the needed gems: [ZK][] and [slyphon-zookeeper][]
 
 ###Usage
+  You can open a terminal and type the following command:
   `ruby ZK_Watcher.rb`
   
   
