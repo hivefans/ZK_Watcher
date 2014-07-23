@@ -35,6 +35,7 @@ class NotifyRingChanges
       if event.node_deleted?
       	dofunc(nil,event.event_name)
         queue.push(:deleted)
+        @zk.stat(@path, watch: true)  # 保持持续监控zk节点变化
       end
       if event.node_changed? or event.node_created?
         data = @zk.get(@path, watch: true).first    # fetch latest data and re-set watch
